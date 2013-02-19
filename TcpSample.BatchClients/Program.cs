@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
 using TcpSample.Client;
 using TcpSample.Messages;
@@ -16,14 +15,14 @@ namespace TcpSample.BatchClients
             Console.ReadLine();
         }
 
-        async private static void Begin()
+        private static async void Begin()
         {
             var clients = new List<ClientWrapper>();
             var random = new Random();
-            for (int i = 0; i < 2000; i++)
+            for (int i = 0; i < 200; i++)
             {
                 await Task.Delay(10);
-                clients.Add(new ClientWrapper(new ClientConnection(), random.Next(10000, 12000)));
+                clients.Add(new ClientWrapper(new ClientConnection(), random.Next(800, 900)));
             }
         }
     }

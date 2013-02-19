@@ -24,7 +24,7 @@ namespace TcpSample.Server
             {
                 while (_state != GameState.Click && !GameOver)
                 {
-                    await Task.Delay(2000);
+                    await Task.Delay(500);
                     Step();
                     
                 }
@@ -33,7 +33,7 @@ namespace TcpSample.Server
                 while (_state == GameState.Click && !GameOver)
                 {
                     CheckPlayerStatus();//end game if both players disconnect
-                    await Task.Delay(2000);
+                    await Task.Delay(500);
                 }
             }
             ChangeState(GameState.Ended);
